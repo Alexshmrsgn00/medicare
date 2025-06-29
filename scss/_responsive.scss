@@ -1,0 +1,65 @@
+@include media-md {
+    .phone-btn{
+        visibility: visible;
+    }
+    .contact {
+        visibility: visible;
+        
+        &__content{
+            display: block;
+            transform: translateY(0);
+            height: 100%;
+            background: transparent;
+            text-align: right;
+        }
+        &__call-intro{
+           display: inline;
+           padding-right: 1.5rem;
+        }
+    }
+
+    .plans-content__row{
+        display: flex;
+
+        .plans-content__services{
+            width: 33.3%;
+            padding: 0 1rem;
+            p{
+            text-align: left;
+            }
+        }
+    }
+
+    .values-content-img{
+        text-align: center;
+
+        img{
+            max-width: 80%;
+        }
+    }
+}
+
+@include media-lg  {
+
+    .home-content{
+        padding: 2rem 0;
+    }
+    .home-content__container{
+        flex-flow: row!important;
+
+        img{
+            max-width: 100%!important;
+        }
+    }
+    .values-content__container{
+        flex-flow: row!important;
+
+        img{
+            max-width: 100%!important;
+        }
+        p {
+            text-align: center;
+            padding: 1rem 3rem;
+        }
+    }
+}

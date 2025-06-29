@@ -1,0 +1,105 @@
+
+.header__logo{
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-image: url(../img/logo.png);
+    width: 270px;
+    height: 40px;
+    background-size: contain;
+}
+ .phone-btn{
+    position: absolute;
+    z-index: 1;
+    right: 1rem;
+    top: 1.5rem;
+    height: 20px;
+    width: 40px;
+    cursor: pointer;
+    @include transition-ease;
+
+    &__burger{
+       background: #064775;
+        border-radius: 5px;
+        width: 44px;
+        height: 44px;
+        max-width: 44px;
+        position: relative;
+        font-size: 0;
+        text-indent: -1000px;
+        display: block;
+        margin-right: 8px;
+        margin-top: -3px;
+
+        &::after{
+           color: white;
+           font: var(--fa-font-solid);
+           display: block;
+           position: absolute;
+           content: '\f879';
+           top: 12px;
+           left: 12px;
+           font-size: 21px;
+           text-indent: 0;
+        }
+        &.open {
+           transform: rotate(720deg);
+           background: $primary-color;
+
+           &::before{
+            transform: rotate(45deg) translate(5px, 8px);
+           }
+
+           &::after {
+            width: 40px;
+            transform: rotate(-45deg) translate(3px, -7px);
+           }
+        }
+    }
+ }
+
+ .contact {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    opacity: 0.98;
+    visibility: hidden;
+
+    &.open {
+        visibility: visible;
+    }
+
+    .contact__content{
+        display: flex;
+        overflow: hidden;
+        height: 50vh;
+        align-items: center;
+        padding: 0 2rem;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 2.1;
+        flex-flow: column wrap;
+        justify-content: center;
+        list-style-type: none;
+        transform: translateY(-100%);
+        transition: all 0.5s ease-in-out;
+        background-color:#ECF1FA;
+
+        &.open {
+            transform:  translateY(0);
+        }
+        &__number{
+            font-size: 1.5rem;
+            color: $primary-color;
+        }
+
+        
+       
+    }
+ }
+
+ @for $i from 1 through 4 {
+    .menu-nav__item:nth-child(#{$i}) {
+        transition-delay: ($i * 0.1s) + 0.15s;
+    }
+ }
