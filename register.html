@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+       <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <title>Medicare Deluxe</title>
+</head>
+<body>
+     <header>
+        <div class="header__logo"></div>
+        <div class="phone-btn">
+            <span class="phone-btn__burger"></span>
+       </div>
+       <div class="contact">
+            <div class="contact__content">
+                <p class="call-intro">Speak with a Licensed Insurance Agent</p>
+                <div class="number">
+                    <a href="tel:+18339691489" class="phone-number">+1 (833) 969-1489</a>
+                    <span class="tty-number">(TTY:711)</span>
+                </div>
+                <p class="availability">
+                    <span class="phone-icon">&#9742;</span> Available Mon - Fri 8am - 6:00pm EST
+                </p>
+
+            </div>
+       </div>
+    </header>
+    <main>
+        <!-- <section class="home">
+            <div class="home-content">
+                <div class="home-content__container">
+                    <h1>Review a Medicare Advantage Plan</h1>
+                </div>
+            </div>
+        </section> -->
+        <section class="form">
+            <div class="form-content">
+                <h1>Review a Medicare Advantage Plan</h1>
+                <div class="form-content__container">
+                    <!-- <h3>What is your date of birth?</h3> -->
+                    <div id="app">
+                        <div class="form-group">
+                            <h3>What is your date of birth?</h3>
+                            <input type="date" id="selectedDate" v-model="selectedDate">
+                        </div>
+                        <button @click="displayDate" v-bind:btn-review>Continue</button>
+                        <div v-if="displayedDate" class="display-area">
+                            <p>You selected:</p>
+                            <p>{{ displayedDate }}</p>
+                        </div>
+                     <!-- <a href="./register.html" class="btn-review">Review Your Enrollment Eligibility</a>
+                </div> -->
+            </div>
+        </section>
+
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-content__disclaimer">
+                <p>We do not offer every plan available in your area. Currently we represent 193 organizations which offer 4,624 products in your area. Please contact Medicare.gov, 1-800-MEDICARE, or your local State Health Insurance Program (SHIP) to get information on all of your options. Service Provided by Digital Media Solutions LLC. Referred companies will depend on the criteria of your quote request. Coverage varies by plan. Refer to Plan's Evidence of Coverage for benefit coverage and details, including limitations (benefit expiration timeframes) and exclusions. Participating sales agencies represent Medicare Advantage HMO, PPO, PFFS organizations and stand-alone PDP prescription drug plans that are contracted with Medicare. Enrollment depends on the plan's contract renewal. Enrollment in a plan may be limited to certain times of the year unless you qualify for a special enrollment period or you are in your Medicare Initial Election Period. Agents may be compensated upon enrollment. No obligation to enroll. MULTIPLAN_MEDICARE_DELUXE_WEB_2025_C</p>
+            </div>
+            <div class="footer-content__footerlinks">
+               <p class="footerlinks">
+                <a target="_blank" href="/terms">Terms of Service</a>
+                <a target="_blank" href="/privacy">Privacy Policy</a>
+                <a target="_blank" href="/california-privacy-notice">California Privacy Notice</a>
+                <a target="_blank" href="https://dmsunsub.io/">Do Not Sell Or Share My Personal Information</a>
+               </p>
+               <p>© <span id="year">2025</span> MedicareDeluxe.com All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+   <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script>
+        const { createApp, ref } = Vue;
+
+        createApp({
+            setup() {
+                const selectedDate = ref('');
+                const displayedDate = ref('');
+
+                const displayDate = () => {
+                    // Set the displayedDate to the new fixed message
+                    displayedDate.value = 'A licensed insurance agent will be contacting you soon. Click on the offer(s) below to see your other options!';
+                };
+
+                return {
+                    selectedDate,
+                    displayedDate,
+                    displayDate
+                };
+            }
+        }).mount('#app');
+    </script>
+</script>
+</body>
+</html>

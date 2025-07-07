@@ -62,4 +62,12 @@
             padding: 1rem 3rem;
         }
     }
+    .register-content__container{
+        flex-flow: row!important;
+
+        img{
+            max-width: 100%!important;
+        }
+    }
+
 }
